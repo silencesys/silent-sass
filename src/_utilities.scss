@@ -1,0 +1,143 @@
+////
+/// @author Martin Rocek
+/// @group Utilities
+////
+
+/// Float clearing helper.
+///
+/// @author Sassdoc
+/// @param {bool} $extend [true] Whether or not extend a placeholder.
+@mixin clearfix($extend: true) {
+    @if $extend {
+        @extend %clearfix;
+    }
+
+    @else {
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+}
+
+/// Shurtcut mixin for columns which cover all major browsers.
+///
+/// @param {number} $count
+/// @param {number} $gap
+@mixin columns($count, $gap) {
+    -moz-column-count: $count;
+    -moz-column-gap: $gap;
+    -webkit-column-count: $count;
+    -webkit-column-gap: $gap;
+    column-count: $count;
+    column-gap: $gap;
+}
+
+/// Accessibility ellipsis helper.
+///
+/// @author Sassdoc
+/// @param {bool} $extend [true] Whether or not extend a placeholder.
+@mixin ellipsis($extend: true) {
+    @if $extend {
+        @extend %ellipsis;
+    }
+
+    @else {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+/// Change placeholder colour in form fields like inputs, textareas etc.
+///
+/// @param {color} $color
+/// @param {number} $opacity [1]
+@mixin placeholder-color($color, $opacity: 1) {
+    // Webkit, Blink, Edge
+    ::-webkit-input-placeholder {
+        color: $color;
+        opacity: $opacity;
+    }
+    // Mozila Firefox 4 to 18
+    :-moz-placeholder {
+        color: $color;
+        opacity: $opacity;
+    }
+    // Mozilla Firefox 19+
+    ::-moz-placeholder {
+        color: $color;
+        opacity: $opacity;
+    }
+    // Internet Explorer 10-11
+    :-ms-input-placeholder {
+        color: $color;
+        opacity: $opacity;
+    }
+}
+
+/// Shorthand for positioning.
+///
+/// @author Sassdoc
+/// @param {string} $position Position type (either `absolute`, `fixed` or `relative`)
+/// @param {length} $top [null] Top offset
+/// @param {length} $right [null] Right offset
+/// @param {length} $bottom [null] Bottom offset
+/// @param {length} $left [null] Left offset
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+/// Rotate element.
+///
+/// @param {number} $degree
+@mixin rotate($degree) {
+    -moz-transform: rotate($degree);
+    -o-transform: rotate($degree);
+    -webkit-transform: rotate($degree);
+    transform: rotate($degree);
+}
+
+/// Transition mixin which cover all major browsers.
+///
+/// @param {arglist} $transitions
+@mixin transitions($transitions...) {
+    -webkit-transition: $transitions;
+    -moz-transition: $transitions;
+    -ms-transition: $transitions;
+    -o-transition: $transitions;
+    transition: $transitions;
+}
+
+/// Baseline grid for typography check.
+///
+/// @param {Number}  $baseline
+/// @param {String}  $line-color-01
+/// @param {String}  $line-color-02
+@mixin baseline-grid($baseline: 24px, $line-color-01: #ccc, $line-color-02: transparent) {
+     background: -webkit-repeating-linear-gradient(-90deg, $line-color-02, $line-color-02 $baseline, $line-color-01 ($baseline + 1));
+     background:    -moz-repeating-linear-gradient(-90deg, $line-color-02, $line-color-02 $baseline, $line-color-01 ($baseline + 1));
+     background:      -ms-repeating-linear-gradient(-90deg, $line-color-02, $line-color-02 $baseline, $line-color-01 ($baseline + 1));
+     background:      -o-repeating-linear-gradient(-90deg, $line-color-02, $line-color-02 $baseline, $line-color-01 ($baseline + 1));
+}
+
+/// Clearfix helper
+///
+/// @author Sassdoc
+/// @require {mixin} clearfix
+%clearfix {
+    @include clearfix($extend: false);
+}
+
+/// Accessibility ellipsis helper.
+///
+/// @author Sassdoc
+/// @require {mixin} ellipsis
+%ellipsis {
+    @include ellipsis($extend: false);
+}
