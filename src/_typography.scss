@@ -319,3 +319,10 @@ $rem-line-height: $base-line-height / $base-font-size * 1rem;
     $padding: ($base-line-height - $width) * $lines;
     @include px-to-rem(padding, $padding);
 }
+
+/// Apply padding equally to all sides and maintain the verticla rhythm.
+///
+/// @param {Number} $lines
+@mixin rhythm-paddings($lines: 1) {
+    @include px-to-rem(padding, $padding);
+}
