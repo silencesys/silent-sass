@@ -323,6 +323,14 @@ $rem-line-height: $base-line-height / $base-font-size * 1rem;
 /// Apply padding equally to all sides and maintain the verticla rhythm.
 ///
 /// @param {Number} $lines
-@mixin rhythm-paddings($lines: 1) {
-    @include px-to-rem(padding, $padding);
+@mixin rhythm-paddings($top: 1, $right: $top, $bottom: $top, $left: $right) {
+    $padding-top: $base-line-height * $top;
+    $padding-right: $base-line-height * $right;
+    $padding-bottom: $base-line-height * $bottom;
+    $padding-left: $base-line-height * $left;
+
+    @include px-to-rem(padding-top, $padding-top);
+    @include px-to-rem(padding-right, $padding-right);
+    @include px-to-rem(padding-bottom, $padding-bottom);
+    @include px-to-rem(padding-left, $padding-left);
 }
