@@ -114,18 +114,6 @@
     transition: $transitions;
 }
 
-/// Baseline grid for typography check.
-///
-/// @param {Number}  $baseline
-/// @param {String}  $line-color-01
-/// @param {String}  $line-color-02
-@mixin baseline-grid($baseline: 24px, $line-color-01: #ccc, $line-color-02: transparent) {
-     background: -webkit-repeating-linear-gradient(-90deg, $line-color-02, $line-color-02 $baseline, $line-color-01 ($baseline + 1));
-     background:    -moz-repeating-linear-gradient(-90deg, $line-color-02, $line-color-02 $baseline, $line-color-01 ($baseline + 1));
-     background:      -ms-repeating-linear-gradient(-90deg, $line-color-02, $line-color-02 $baseline, $line-color-01 ($baseline + 1));
-     background:      -o-repeating-linear-gradient(-90deg, $line-color-02, $line-color-02 $baseline, $line-color-01 ($baseline + 1));
-}
-
 /// Shortcut mixin for web gradients which cover all major browsers.
 ///
 /// @param {Number|String} $direction
@@ -139,12 +127,12 @@
     background: linear-gradient($direction, $color-01, $color-02);
 }
 
-// Utility mixin for css grids.
-//
-// @param {String} $columns
-// @param {String} $rows [$columns]
-// @param {Number} $column-gap [0px]
-// @param {Number} $row-gap [$column-gap]
+/// Utility mixin for css grids.
+///
+/// @param {String} $columns
+/// @param {String} $rows [$columns]
+/// @param {Number} $column-gap [0px]
+/// @param {Number} $row-gap [$column-gap]
 @mixin grid($columns, $rows: $columns, $column-gap: 0px, $row-gap: $column-gap) {
     display: -ms-grid;
     display: grid;
@@ -156,10 +144,10 @@
     grid-row-gap: $row-gap;
 }
 
-// Shortcut mixin for setting element position inside a grid.
-//
-// @param {Number} $start
-// @param {Number} $end
+/// Shortcut mixin for setting element position inside a grid.
+///
+/// @param {Number} $start
+/// @param {Number} $end
 @mixin grid-column($start, $end) {
     -ms-grid-column: $start;
     grid-column-start: $start;
@@ -167,10 +155,10 @@
     grid-column-end: $end;
 }
 
-// Shortcut mixin for setting element position inside a grid.
-//
-// @param {Number} $start
-// @param {Number} $end
+/// Shortcut mixin for setting element position inside a grid.
+///
+/// @param {Number} $start
+/// @param {Number} $end
 @mixin grid-row($start, $end) {
     -ms-grid-row: $start;
     grid-row-start: $start;
