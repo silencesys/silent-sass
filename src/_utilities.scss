@@ -139,6 +139,30 @@
     background: linear-gradient($direction, $color-01, $color-02);
 }
 
+// Utility mixin for css grids.
+//
+// @param {String|List} $columns
+// @param {String|List} $rows
+@mixin grid($columns..., $rows...) {
+    display: grid;
+    -ms-grid-columns: $columns;
+    grid-template-columns: $columns;
+    -ms-grid-rows: $rows;
+    grid-template-rows: $rows;
+}
+@mixin grid-column($start, $end) {
+    -ms-grid-column: $start;
+    grid-column-start: $start;
+    -ms-grid-column-span: $end;
+    grid-column-end: $end;
+}
+@mixin grid-row($start, $end) {
+    -ms-grid-row: $start;
+    grid-row-start: $start;
+    -ms-grid-row-span: $end;
+    grid-row-end: $end;
+}
+
 /// Clearfix helper
 ///
 /// @author Sassdoc
