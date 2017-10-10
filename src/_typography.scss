@@ -36,6 +36,16 @@ $round-to-nearest-half-line: false !default;
 /// @type Number
 $min-line-padding: 2px !default;
 
+/// Most (all?) browsers use a default of 16px for type.
+///
+/// @type Number
+$browser-default-font-size: 16px;
+
+/// The height of one line of type, in rems.
+///
+/// @type Number
+$rem-line-height: $base-line-height / $base-font-size * 1rem;
+
 /// Font-size mixin that calculates accurate font-size and line-height
 /// to available breakpoints.
 ///
@@ -88,57 +98,6 @@ $min-line-padding: 2px !default;
         @include set-font-size($fs-font-size);
     }
 }
-
-/// Utility mixin for vertical alignment
-///
-/// @deprecated Recommended is to use set-font-size mixin
-/// @param {Number} $size
-/// @param {Boolean} $margin
-/// @param {Number} $line-height
-@mixin font-rhythm($size, $margin: true, $line-height: $base-line-height) {
-    font-size: 0px  + $size;
-    font-size: 0rem + $size / $base-font-size;
-
-    // When $line-height is set
-    @if $line-height != $base-line-height and $line-height != 1 {
-        line-height: ceil($size / $line-height) * ($line-height / $size);
-    }
-
-    // normal $line-height
-    // if the line-height is left.
-    @else {
-        line-height: ceil($size / $base-line-height) * ($base-line-height / $size);
-    }
-
-    // margin-bottom functions
-
-    // if no is bottom margin is required
-    @if $margin == false {
-        margin-bottom: 0;
-    }
-
-    // if a specific bottom margin is required
-    @else if $margin != true and $margin != false {
-        margin-bottom: 0px + $margin;
-        margin-bottom: 0rem + ($margin / $base-font-size);
-    }
-
-    // if you're keeping the vertical rhythm with the margin
-    @else {
-        margin-bottom: 0px + $base-line-height;
-        margin-bottom: 0rem + ($base-line-height / $base-font-size);
-    }
-}
-
-/// Most (all?) browsers use a default of 16px for type.
-///
-/// @type Number
-$browser-default-font-size: 16px;
-
-/// The height of one line of type, in rems.
-///
-/// @type Number
-$rem-line-height: $base-line-height / $base-font-size * 1rem;
 
 /// Given pixel inputs, print rem values with pixel fallbacks.
 /// Based on Bitmanic's rem mixin (https://github.com/bitmanic/rem)

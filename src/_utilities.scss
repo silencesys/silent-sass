@@ -134,11 +134,11 @@
 /// @param {Number} $column-gap [0px]
 /// @param {Number} $row-gap [$column-gap]
 @mixin grid($columns, $rows: $columns, $column-gap: 0px, $row-gap: $column-gap) {
-    display: -ms-grid;
+    // display: -ms-grid;
     display: grid;
-    -ms-grid-columns: $columns;
+    // -ms-grid-columns: $columns;
     grid-template-columns: $columns;
-    -ms-grid-rows: $rows;
+    // -ms-grid-rows: $rows;
     grid-template-rows: $rows;
     grid-column-gap: $column-gap;
     grid-row-gap: $row-gap;
@@ -149,9 +149,9 @@
 /// @param {Number} $start
 /// @param {Number} $end
 @mixin grid-column($start, $end) {
-    -ms-grid-column: $start;
+    // -ms-grid-column: $start;
     grid-column-start: $start;
-    -ms-grid-column-span: $end - $start;
+    // -ms-grid-column-span: $end - $start;
     grid-column-end: $end;
 }
 
@@ -160,9 +160,9 @@
 /// @param {Number} $start
 /// @param {Number} $end
 @mixin grid-row($start, $end) {
-    -ms-grid-row: $start;
+    // -ms-grid-row: $start;
     grid-row-start: $start;
-    -ms-grid-row-span: $end - $start;
+    // -ms-grid-row-span: $end - $start;
     grid-row-end: $end;
 }
 

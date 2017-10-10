@@ -24,7 +24,7 @@ $breakpoints: ();
 /// @require {function} get-breakpoint
 /// @param {string | number} $min [0] - Units are required for numerical parameters.
 /// @param {number} $max [0] - Units are required for numerical parameters.
-@mixin response-to($min: 0, $max: 0) {
+@mixin respond-to($min: 0, $max: 0) {
     $type: type-of($min);
     $query: "all" !default;
 
