@@ -166,6 +166,14 @@
     grid-row-end: $end;
 }
 
+@mixin unselectable() {
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 /// Clearfix helper
 ///
 /// @author Sassdoc
