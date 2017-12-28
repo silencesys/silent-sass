@@ -56,22 +56,22 @@
 /// @param {number} $opacity [1]
 @mixin placeholder-color($color, $opacity: 1) {
     // Webkit, Blink, Edge
-    ::-webkit-input-placeholder {
+    &::-webkit-input-placeholder {
         color: $color;
         opacity: $opacity;
     }
     // Mozila Firefox 4 to 18
-    :-moz-placeholder {
+    &:-moz-placeholder {
         color: $color;
         opacity: $opacity;
     }
     // Mozilla Firefox 19+
-    ::-moz-placeholder {
+    &::-moz-placeholder {
         color: $color;
         opacity: $opacity;
     }
     // Internet Explorer 10-11
-    :-ms-input-placeholder {
+    &:-ms-input-placeholder {
         color: $color;
         opacity: $opacity;
     }
