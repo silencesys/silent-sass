@@ -1,6 +1,6 @@
 {
   "name": "silent-sass",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Helpful set of sass mixins and functions.",
   "main": "src/core.scss",
   "scripts": {
