@@ -1,6 +1,6 @@
 # Silent SASS
 
-__Package is still under development.__
+🚧 __Package is still under development.__
 
 Is package containing helpful set of mixins and sass utilities to start
 devloping responsive sites.
@@ -32,28 +32,14 @@ mix.webpackConfig({
 It is recommended to set some default variables eg.
 
 ```scss
-    $base-font-size: 16px !default;    // Absolute height of body text, in pixels
-    $base-line-height: 24px !default;  // Absolute height of one line of type, in pixels
-    $rhythm-font-unit: px !default;    // The font unit to use when returning values in rhythm functions
-    $min-line-padding: 2px !default;   // Ensure there is at least this many pixels of vertical padding above and below the text.
+$base-font-size: 16px !default;    // Absolute height of body text, in pixels
+$base-line-height: 24px !default;  // Absolute height of one line of type, in pixels
+$rhythm-font-unit: px !default;    // The font unit to use when returning values in rhythm functions
+$min-line-padding: 2px !default;   // Ensure there is at least this many pixels of vertical padding above and below the text.
 
-    // Allows to round the line height to the nearest half line height instead of the nearest integral line.
-    $round-to-nearest-half-line: false !default;
+// Allows to round the line height to the nearest half line height instead of the nearest integral line.
+$round-to-nearest-half-line: false !default;
 ```
-<!--
-## Color naming
-loud
-very-pale
-very-light
-brilliant
-light
-neutral
-moderate
-dark
-deep
-nightfall
-blackish
--->
 
 ## License
 This package is licensed under the [MIT](license.md) license.
