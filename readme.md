@@ -1,9 +1,17 @@
-# Silent SASS
+<br>
 
-🚧 __Package is still under development.__
+<p align="center">
+<img src="./docs/assets/images/Silent-sass.png" width="300px">
+</p>
 
+<br>
+<p align="center">
 Is package containing helpful set of mixins and sass utilities to start
 devloping responsive sites.
+</p>
+
+<br>
+<br>
 
 ## Installation
 

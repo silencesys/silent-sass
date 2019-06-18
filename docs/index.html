@@ -1,273 +1,5613 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Silent-sass - v0.0.9</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Silent-sass - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>Helpful set of sass mixins and functions.</p>
-"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title"><a href="https://github.com/silencesys/silent-sass#readme">Silent-sass - v0.0.9</a></h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="breakpoints"><a href="#breakpoints">breakpoints</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="breakpoints-variable"><a href="#breakpoints-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="breakpoints" data-name="breakpoints" data-type="variable"><a href="#breakpoints-variable-breakpoints">breakpoints</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="breakpoints-mixin"><a href="#breakpoints-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="breakpoints" data-name="respond-to" data-type="mixin"><a href="#breakpoints-mixin-respond-to">respond-to</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="breakpoints-function"><a href="#breakpoints-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="breakpoints" data-name="get-breakpoint" data-type="function"><a href="#breakpoints-function-get-breakpoint">get-breakpoint</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="config"><a href="#config">config</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="config-variable"><a href="#config-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="config" data-name="base-font-size" data-type="variable"><a href="#config-variable-base-font-size">base-font-size</a></li><li class="sidebar__item sassdoc__item" data-group="config" data-name="base-line-height" data-type="variable"><a href="#config-variable-base-line-height">base-line-height</a></li><li class="sidebar__item sassdoc__item" data-group="config" data-name="rhythm-font-unit" data-type="variable"><a href="#config-variable-rhythm-font-unit">rhythm-font-unit</a></li><li class="sidebar__item sassdoc__item" data-group="config" data-name="round-to-nearest-half-line" data-type="variable"><a href="#config-variable-round-to-nearest-half-line">round-to-nearest-half-line</a></li><li class="sidebar__item sassdoc__item" data-group="config" data-name="min-line-padding" data-type="variable"><a href="#config-variable-min-line-padding">min-line-padding</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="typography"><a href="#typography">typography</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="typography-variable"><a href="#typography-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="typography" data-name="browser-default-font-size" data-type="variable"><a href="#typography-variable-browser-default-font-size">browser-default-font-size</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="rem-line-height" data-type="variable"><a href="#typography-variable-rem-line-height">rem-line-height</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="typography-mixin"><a href="#typography-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="typography" data-name="font-size" data-type="mixin"><a href="#typography-mixin-font-size">font-size</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="make-font-size" data-type="mixin"><a href="#typography-mixin-make-font-size">make-font-size</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="px-to-rem" data-type="mixin"><a href="#typography-mixin-px-to-rem">px-to-rem</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="establish-baseline" data-type="mixin"><a href="#typography-mixin-establish-baseline">establish-baseline</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="set-font-size" data-type="mixin"><a href="#typography-mixin-set-font-size">set-font-size</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="set-leading" data-type="mixin"><a href="#typography-mixin-set-leading">set-leading</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="leader" data-type="mixin"><a href="#typography-mixin-leader">leader</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="trailer" data-type="mixin"><a href="#typography-mixin-trailer">trailer</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="padding-leader" data-type="mixin"><a href="#typography-mixin-padding-leader">padding-leader</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="padding-trailer" data-type="mixin"><a href="#typography-mixin-padding-trailer">padding-trailer</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="rhythm-spacing" data-type="mixin"><a href="#typography-mixin-rhythm-spacing">rhythm-spacing</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="side-rhythm-border" data-type="mixin"><a href="#typography-mixin-side-rhythm-border">side-rhythm-border</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="leading-border" data-type="mixin"><a href="#typography-mixin-leading-border">leading-border</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="trailing-border" data-type="mixin"><a href="#typography-mixin-trailing-border">trailing-border</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="rhythm-borders" data-type="mixin"><a href="#typography-mixin-rhythm-borders">rhythm-borders</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="rhythm-paddings" data-type="mixin"><a href="#typography-mixin-rhythm-paddings">rhythm-paddings</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="typography-function"><a href="#typography-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="typography" data-name="rhythm" data-type="function"><a href="#typography-function-rhythm">rhythm</a></li><li class="sidebar__item sassdoc__item" data-group="typography" data-name="lines-for-font-size" data-type="function"><a href="#typography-function-lines-for-font-size">lines-for-font-size</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="utilities"><a href="#utilities">utilities</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="utilities-mixin"><a href="#utilities-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="clearfix" data-type="mixin"><a href="#utilities-mixin-clearfix">clearfix</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="columns" data-type="mixin"><a href="#utilities-mixin-columns">columns</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="ellipsis" data-type="mixin"><a href="#utilities-mixin-ellipsis">ellipsis</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="placeholder-color" data-type="mixin"><a href="#utilities-mixin-placeholder-color">placeholder-color</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="position" data-type="mixin"><a href="#utilities-mixin-position">position</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="rotate" data-type="mixin"><a href="#utilities-mixin-rotate">rotate</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="transitions" data-type="mixin"><a href="#utilities-mixin-transitions">transitions</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="gradient" data-type="mixin"><a href="#utilities-mixin-gradient">gradient</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="grid" data-type="mixin"><a href="#utilities-mixin-grid">grid</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="grid-column" data-type="mixin"><a href="#utilities-mixin-grid-column">grid-column</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="grid-row" data-type="mixin"><a href="#utilities-mixin-grid-row">grid-row</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="utilities-placeholder"><a href="#utilities-placeholder">placeholders</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="clearfix" data-type="placeholder"><a href="#utilities-placeholder-clearfix">clearfix</a></li><li class="sidebar__item sassdoc__item" data-group="utilities" data-name="ellipsis" data-type="placeholder"><a href="#utilities-placeholder-ellipsis">ellipsis</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="breakpoints"><div class="container">breakpoints</div></h1><section class="main__sub-section" id="breakpoints-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="breakpoints-variable-breakpoints"><h3 class="item__heading"><a class="item__name" href="#variable-breakpoints">breakpoints</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$breakpoints: ();</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Map of available breakpoints.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$breakpoints: (
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="&lt;p&gt;Helpful set of sass mixins and functions.&lt;/p&gt;
+">
+    <link href="http://fonts.googleapis.com/css?family=Nunito:300,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Titillium+Web:400,400italic,600italic,600,700,700italic,900,300italic,300,200italic,200" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <title></title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .logo {
+        width: 10em;
+      }
+    </style>
+  </head>
+
+  <body>
+    
+<nav class="side-nav">
+  <ul class="social" style="text-align: center">
+    <li><a class="github" href="https://github.com/silencesys/silent-sass">GitHub / Install</a></li>
+    <li><a class="twitter" href="https://twitter.com/silencesys">Twitter</a></li>
+  </ul>
+
+  <a class="logo-container" href="">
+    <img alt="Silent-sass Logo" class="logo" src="./assets/images/Silent-sass.png">
+  </a>
+
+  <ul class="list">
+    
+      
+        
+      
+        
+  <li class="title">
+  <a href="#mixin">
+    <h3 class="type-heading">mixins</h3>
+  </a>
+</li>
+
+
+  <li><a href="#respond-to">respond-to</a></li>
+
+
+        
+      
+        
+      
+      
+        
+      
+        
+      
+        
+          <li class="title">
+  <a href="#function">
+    <h3 class="type-heading">functions</h3>
+  </a>
+</li>
+
+
+  <li><a href="#get-breakpoint">get-breakpoint</a></li>
+
+
+        
+      
+      
+        
+          <li class="title">
+  <a href="#variable">
+    <h3 class="type-heading">variables</h3>
+  </a>
+</li>
+
+
+  <li><a href="#breakpoints">breakpoints</a></li>
+
+
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+      
+        
+      
+      
+        
+          <li class="title">
+  <a href="#variable">
+    <h3 class="type-heading">variables</h3>
+  </a>
+</li>
+
+
+  <li><a href="#base-font-size">base-font-size</a></li>
+
+  <li><a href="#base-line-height">base-line-height</a></li>
+
+  <li><a href="#rhythm-font-unit">rhythm-font-unit</a></li>
+
+  <li><a href="#round-to-nearest-half-line">round-to-nearest-half-line</a></li>
+
+  <li><a href="#min-line-padding">min-line-padding</a></li>
+
+
+        
+      
+    
+      
+        
+      
+        
+          <li class="title">
+  <a href="#mixin">
+    <h3 class="type-heading">mixins</h3>
+  </a>
+</li>
+
+
+  <li><a href="#font-size">font-size</a></li>
+
+  <li><a href="#make-font-size">make-font-size</a></li>
+
+  <li><a href="#px-to-rem">px-to-rem</a></li>
+
+  <li><a href="#establish-baseline">establish-baseline</a></li>
+
+  <li><a href="#set-font-size">set-font-size</a></li>
+
+  <li><a href="#set-leading">set-leading</a></li>
+
+  <li><a href="#leader">leader</a></li>
+
+  <li><a href="#trailer">trailer</a></li>
+
+  <li><a href="#padding-leader">padding-leader</a></li>
+
+  <li><a href="#padding-trailer">padding-trailer</a></li>
+
+  <li><a href="#rhythm-spacing">rhythm-spacing</a></li>
+
+  <li><a href="#side-rhythm-border">side-rhythm-border</a></li>
+
+  <li><a href="#leading-border">leading-border</a></li>
+
+  <li><a href="#trailing-border">trailing-border</a></li>
+
+  <li><a href="#rhythm-borders">rhythm-borders</a></li>
+
+  <li><a href="#rhythm-paddings">rhythm-paddings</a></li>
+
+
+        
+      
+        
+      
+      
+        
+      
+        
+      
+        
+          <li class="title">
+  <a href="#function">
+    <h3 class="type-heading">functions</h3>
+  </a>
+</li>
+
+
+  <li><a href="#rhythm">rhythm</a></li>
+
+  <li><a href="#lines-for-font-size">lines-for-font-size</a></li>
+
+
+        
+      
+      
+        
+          <li class="title">
+  <a href="#variable">
+    <h3 class="type-heading">variables</h3>
+  </a>
+</li>
+
+
+  <li><a href="#browser-default-font-size">browser-default-font-size</a></li>
+
+  <li><a href="#rem-line-height">rem-line-height</a></li>
+
+
+        
+      
+        
+      
+        
+      
+    
+      
+        
+          <li class="title">
+  <a href="#mixin">
+    <h3 class="type-heading">mixins</h3>
+  </a>
+</li>
+
+
+  <li><a href="#clearfix">clearfix</a></li>
+
+  <li><a href="#columns">columns</a></li>
+
+  <li><a href="#ellipsis">ellipsis</a></li>
+
+  <li><a href="#placeholder-color">placeholder-color</a></li>
+
+  <li><a href="#position">position</a></li>
+
+  <li><a href="#rotate">rotate</a></li>
+
+  <li><a href="#transitions">transitions</a></li>
+
+  <li><a href="#gradient">gradient</a></li>
+
+  <li><a href="#grid">grid</a></li>
+
+  <li><a href="#grid-column">grid-column</a></li>
+
+  <li><a href="#grid-row">grid-row</a></li>
+
+
+        
+      
+        
+      
+      
+        
+      
+        
+      
+      
+        
+      
+        
+      
+    
+  </ul>
+</nav>
+
+
+    <div class="main-content">
+      
+  <header class="search-bar">
+    <section data-role="content-wrapper">
+      <div class="meta-data">
+        <h1>Silent-sass <span>0.1.0</span></h1>
+      </div>
+
+      <div class="search-form" data-role="search-form">
+        <input name="search" type="text" class="search-field" autocomplete="off" autofocus id="search-field" placeholder="Search documentation..." />
+        <ul class="suggestion-container"></ul>
+      </div>
+    </section>
+  </header>
+
+  <section class="main-inner">
+    
+      
+        
+      
+        
+          <h1 id="mixin" class="type-title">
+  <span data-role="content-wrapper">
+    mixins
+  </span>
+</h1>
+
+<section class="mixins">
+  
+    
+
+<article id="respond-to" data-name="respond-to" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#respond-to">
+      respond-to
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+        
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+        
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin respond-to($min: 0, $max: 0) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Breakpoint mixin to handle responsive views.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$min</code>
+      <ul class="meta">
+        <span class="type-label">string, number</span>
+        
+          <span class="default-label">
+            Default:<code>0</code>
+          </span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>Units are required for numerical parameters.</p>
+
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$max</code>
+      <ul class="meta">
+        <span class="type-label">number</span>
+        
+          <span class="default-label">
+            Default:<code>0</code>
+          </span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>Units are required for numerical parameters.</p>
+
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+  <section class="example">
+    <h3 class="sub-heading">Example</h3>
+
+    
+      <pre class="code language-scss"><code>@include response-to(&#39;small&#39;) {
+    // your responsive styles ...
+}</code></pre>
+      
+    </section>
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+</section>
+
+        
+      
+        
+      
+      
+        
+      
+        
+      
+        
+          <h1 id="function" class="type-title">
+  <span data-role="content-wrapper">
+    functions
+  </span>
+</h1>
+
+<section class="functions">
+  
+    
+
+<article id="get-breakpoint" data-name="get-breakpoint" data-type="function" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#get-breakpoint">
+      get-breakpoint
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@function get-breakpoint($breakpoint-name) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Get breakpoint from map list of breakpoints.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$breakpoint-name</code>
+      <ul class="meta">
+        <span class="type-label">string</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+  <h3 class="sub-heading">Returns</h3>
+  <p class="item-description">
+  
+    String, Null
+  
+  </p>
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+</section>
+
+        
+      
+      
+        
+          <h1 id="variable" class="type-title">
+  <span data-role="content-wrapper">
+    variables
+  </span>
+</h1>
+
+<section class="variables">
+  
+    
+
+<article id="breakpoints" data-name="breakpoints" data-type="variable" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#breakpoints">
+      breakpoints
+    </a>
+  </h2>
+
+  
+    <span class="type-label">Map</span>
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    <pre class="code language-scss"><code>$breakpoints: ();</code></pre>
+
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Map of available breakpoints.</p>
+</p>
+
+
+      
+        
+        
+
+      
+        
+        
+  <section class="example">
+    <h3 class="sub-heading">Example</h3>
+
+    
+      <pre class="code language-scss"><code>$breakpoints: (
     small: &quot;(max-width: 500px)&quot;,
     big:   &quot;(min-width: 2000px)&quot;
-);</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#breakpoints-mixin-respond-to"><code>respond-to</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#breakpoints-function-get-breakpoint"><code>get-breakpoint</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-font-size"><code>font-size</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section></section><section class="main__sub-section" id="breakpoints-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="breakpoints-mixin-respond-to"><h3 class="item__heading"><a class="item__name" href="#mixin-respond-to">respond-to</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin respond-to($min: 0, $max: 0) { 
-    $type: type-of($min);
-    $query: &quot;all&quot; !default;
+);</code></pre>
+      
+    </section>
 
-    @if $type == string {
-        $query: get-breakpoint($min);
-    }
 
-    // When is $min set to number, then handle it as min and max values
-    @else if $type == number {
-        @if $min != 0 and $max != 0 {
-            $query: &quot;(min-width: #{$min}) and (max-width: #{$max})&quot;;
-        }
+      
+        
+        
 
-        @else if $min != 0 and $max == 0 {
-            $query: &quot;(min-width: #{$min})&quot;;
-        }
+      
+        
+        
 
-        @else if $min == 0 and $max != 0 {
-            $query: &quot;(max-width: #{$max})&quot;;
-        }
-    }
 
-    @else {
-        @error &#39;No value found for `#{$breakpoint}`. &#39;
-             + &#39;Please make sure it is defined in `$breakpoints` map.&#39;;
-    }
 
-    @media #{$query} {
-        @content;
-    }
- }" data-collapsed="@mixin respond-to($min: 0, $max: 0) { ... }"><code>@mixin respond-to($min: 0, $max: 0) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Breakpoint mixin to handle responsive views.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$min</code></th><td data-label="desc"><p>Units are required for numerical parameters.</p></td><td data-label="type"><code>String</code> or <code>Number</code></td><td data-label="default"><code>0</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$max</code></th><td data-label="desc"><p>Units are required for numerical parameters.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive). Role: Styles that should be modified in responsive view</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include response-to(&#39;small&#39;) {
-    // your responsive styles ...
-}</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>No value found for <code>#{$breakpoint}</code>.</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#breakpoints-variable-breakpoints"><code>breakpoints</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#breakpoints-function-get-breakpoint"><code>get-breakpoint</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section></section><section class="main__sub-section" id="breakpoints-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="breakpoints-function-get-breakpoint"><h3 class="item__heading"><a class="item__name" href="#function-get-breakpoint">get-breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function get-breakpoint($breakpoint-name) { 
-    @if map-has-key($breakpoints, $breakpoint-name) {
-        @return map-get($breakpoints, $breakpoint-name);
-    }
 
-    @warn error(get-breakpoint, &quot;Undefined breakpoint layout for key &#39;#{$breakpoint-name}&#39;.&quot;);
+      
+        
+        
 
-    @return null;
- }" data-collapsed="@function get-breakpoint($breakpoint-name) { ... }"><code>@function get-breakpoint($breakpoint-name) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Get breakpoint from map list of breakpoints.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoint-name</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> or <code>Null</code></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>Undefined breakpoint name for key #{$breakpoint-name} if there is no breakpoint with given name.</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#breakpoints-variable-breakpoints"><code>breakpoints</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#breakpoints-mixin-respond-to"><code>respond-to</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="config"><div class="container">config</div></h1><section class="main__sub-section" id="config-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="config-variable-base-font-size"><h3 class="item__heading"><a class="item__name" href="#variable-base-font-size">base-font-size</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$base-font-size: 16px !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Absolute height of body text, in pixels</p></div><h3 class="item__sub-heading">Type</h3><p><code>Number</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-px-to-rem"><code>px-to-rem</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-establish-baseline"><code>establish-baseline</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="config-variable-base-line-height"><h3 class="item__heading"><a class="item__name" href="#variable-base-line-height">base-line-height</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$base-line-height: 24px !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Absolute height of one line of type, in pixels</p></div><h3 class="item__sub-heading">Type</h3><p><code>Number</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#typography-function-rhythm"><code>rhythm</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#typography-function-lines-for-font-size"><code>lines-for-font-size</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#typography-function-lines-for-font-size"><code>lines-for-font-size</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#typography-function-lines-for-font-size"><code>lines-for-font-size</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-set-leading"><code>set-leading</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-side-rhythm-border"><code>side-rhythm-border</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-borders"><code>rhythm-borders</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-paddings"><code>rhythm-paddings</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-paddings"><code>rhythm-paddings</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-paddings"><code>rhythm-paddings</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-paddings"><code>rhythm-paddings</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="config-variable-rhythm-font-unit"><h3 class="item__heading"><a class="item__name" href="#variable-rhythm-font-unit">rhythm-font-unit</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$rhythm-font-unit: px !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The font unit to use when returning values in rhythm functions</p></div><h3 class="item__sub-heading">Type</h3><p><code>String</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#typography-function-rhythm"><code>rhythm</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="config-variable-round-to-nearest-half-line"><h3 class="item__heading"><a class="item__name" href="#variable-round-to-nearest-half-line">round-to-nearest-half-line</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$round-to-nearest-half-line: false !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Allows the <code>adjust-font-size-to</code> mixin and the <code>lines-for-font-size</code> function to round the line height to the nearest half line height instead of the nearest integral line height to avoid large spacing between lines.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Boolean</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#typography-function-lines-for-font-size"><code>lines-for-font-size</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#typography-function-lines-for-font-size"><code>lines-for-font-size</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="config-variable-min-line-padding"><h3 class="item__heading"><a class="item__name" href="#variable-min-line-padding">min-line-padding</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$min-line-padding: 2px !default;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Ensure there is at least this many pixels of vertical padding above and below the text.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Number</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#typography-function-lines-for-font-size"><code>lines-for-font-size</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="typography"><div class="container">typography</div></h1><section class="main__sub-section" id="typography-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="typography-variable-browser-default-font-size"><h3 class="item__heading"><a class="item__name" href="#variable-browser-default-font-size">browser-default-font-size</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$browser-default-font-size: 16px;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Most (all?) browsers use a default of 16px for type.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Number</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-establish-baseline"><code>establish-baseline</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-variable-rem-line-height"><h3 class="item__heading"><a class="item__name" href="#variable-rem-line-height">rem-line-height</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$rem-line-height: $base-line-height / $base-font-size * 1rem;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The height of one line of type, in rems.</p></div><h3 class="item__sub-heading">Type</h3><p><code>Number</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#typography-function-rhythm"><code>rhythm</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section></section><section class="main__sub-section" id="typography-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="typography-mixin-font-size"><h3 class="item__heading"><a class="item__name" href="#mixin-font-size">font-size</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) { 
-    @each $fs-breakpoint, $fs-font-size in $fs-map {
-        @if $fs-breakpoint == null {
-            @include make-font-size($fs-font-size);
-        }
-        @else {
-            // If $fs-font-size is a key that exists in
-            // $fs-breakpoints, use the value
-            @if map-has-key($fs-breakpoints, $fs-breakpoint) {
-                $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
-            }
-            @else {
-                $fs-breakpoint: &quot;(min-width: #{$fs-breakpoint})&quot;;
-            }
+      
+        
+        
 
-            @media #{$fs-breakpoint} {
-                @include make-font-size($fs-font-size);
-            }
-        }
-    }
- }" data-collapsed="@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) { ... }"><code>@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Font-size mixin that calculates accurate font-size and line-height to available breakpoints.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$fs-map</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$fs-breakpoints</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Map</code></td><td data-label="default"><code>$breakpoints</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>$fs-map variable example</p></div><pre class="example__code language-scss"><code>$p-sizes: (
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+</section>
+
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+      
+        
+      
+      
+        
+          <h1 id="variable" class="type-title">
+  <span data-role="content-wrapper">
+    variables
+  </span>
+</h1>
+
+<section class="variables">
+  
+    
+
+<article id="base-font-size" data-name="base-font-size" data-type="variable" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#base-font-size">
+      base-font-size
+    </a>
+  </h2>
+
+  
+    <span class="type-label">Number</span>
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    <pre class="code language-scss"><code>$base-font-size: 16px !default;</code></pre>
+
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Absolute height of body text, in pixels</p>
+</p>
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="base-line-height" data-name="base-line-height" data-type="variable" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#base-line-height">
+      base-line-height
+    </a>
+  </h2>
+
+  
+    <span class="type-label">Number</span>
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    <pre class="code language-scss"><code>$base-line-height: 24px !default;</code></pre>
+
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Absolute height of one line of type, in pixels</p>
+</p>
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="rhythm-font-unit" data-name="rhythm-font-unit" data-type="variable" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#rhythm-font-unit">
+      rhythm-font-unit
+    </a>
+  </h2>
+
+  
+    <span class="type-label">String</span>
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    <pre class="code language-scss"><code>$rhythm-font-unit: px !default;</code></pre>
+
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>The font unit to use when returning values in rhythm functions</p>
+</p>
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="round-to-nearest-half-line" data-name="round-to-nearest-half-line" data-type="variable" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#round-to-nearest-half-line">
+      round-to-nearest-half-line
+    </a>
+  </h2>
+
+  
+    <span class="type-label">Boolean</span>
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    <pre class="code language-scss"><code>$round-to-nearest-half-line: false !default;</code></pre>
+
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Allows the <code>adjust-font-size-to</code> mixin and the <code>lines-for-font-size</code> function
+to round the line height to the nearest half line height instead of the
+nearest integral line height to avoid large spacing between lines.</p>
+</p>
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="min-line-padding" data-name="min-line-padding" data-type="variable" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#min-line-padding">
+      min-line-padding
+    </a>
+  </h2>
+
+  
+    <span class="type-label">Number</span>
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    <pre class="code language-scss"><code>$min-line-padding: 2px !default;</code></pre>
+
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Ensure there is at least this many pixels
+of vertical padding above and below the text.</p>
+</p>
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+</section>
+
+        
+      
+    
+      
+        
+      
+        
+          <h1 id="mixin" class="type-title">
+  <span data-role="content-wrapper">
+    mixins
+  </span>
+</h1>
+
+<section class="mixins">
+  
+    
+
+<article id="font-size" data-name="font-size" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#font-size">
+      font-size
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+        
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Font-size mixin that calculates accurate font-size and line-height
+to available breakpoints.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$fs-map</code>
+      <ul class="meta">
+        <span class="type-label">map</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$fs-breakpoints</code>
+      <ul class="meta">
+        <span class="type-label">map</span>
+        
+          <span class="default-label">
+            Default:<code>$breakpoints</code>
+          </span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+  <section class="example">
+    <h3 class="sub-heading">Example</h3>
+
+    
+      <pre class="code language-scss"><h4 class="description"><p>$fs-map variable example</p>
+</h4><code>$p-sizes: (
     null: (1em, 1.3), // null field should be always present
     small: 1.1em,
     medium: (1.2em, 1.4),
     900px: 1.5em, // it&#39;s possible to use min viewport width as key too
-)</code></pre></div><div class="item__example example"><div class="example__description"><p>usage example</p></div><pre class="example__code language-scss"><code>p {
+)</code></pre>
+      
+      <pre class="code language-scss"><h4 class="description"><p>usage example</p>
+</h4><code>p {
     @include font-size($p-sizes);
-}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#breakpoints-variable-breakpoints"><code>breakpoints</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-make-font-size"><code>make-font-size</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-make-font-size"><h3 class="item__heading"><a class="item__name" href="#mixin-make-font-size">make-font-size</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin make-font-size($fs-font-size) { 
-    // If $fs-font-size is a list, include
-    // both font-size and line-height
-    @if type-of($fs-font-size) == list {
-        @include set-font-size(nth($fs-font-size, 1));
-    } @else {
-        @include set-font-size($fs-font-size);
-    }
- }" data-collapsed="@mixin make-font-size($fs-font-size) { ... }"><code>@mixin make-font-size($fs-font-size) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Utility function for mixin font-size.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$fs-font-size</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code> or <code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-set-font-size"><code>set-font-size</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-set-font-size"><code>set-font-size</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-font-size"><code>font-size</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-px-to-rem"><h3 class="item__heading"><a class="item__name" href="#mixin-px-to-rem">px-to-rem</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin px-to-rem($property, $px-values) { 
-    // Number of pixels in 1rem (default: 16px/rem)
-    // When converting to rems, we must divide by this ratio.
-    $px-per-rem: $base-font-size / 1rem;
+}</code></pre>
+      
+    </section>
 
-    // Print the pixel fallback declaration first so we can override it in capable browsers.
-    #{$property}: $px-values;
 
-    // If there is only one value, print the declaration with the value converted to rems.
-    @if type-of($px-values) == &quot;number&quot; {
-        #{$property}: $px-values / $px-per-rem;
-    } @else {
-        // Otherwise, we&#39;ve got a list and we&#39;ll need to convert each value in turn.
-        // Create an empty list that we can dump values into.
-        $rem-values: ();
-        @each $value in $px-values {
-            // If the value is zero, a string or a color, leave it be.
-            @if $value == 0 or type-of($value) == &quot;string&quot; or type-of($value) == &quot;color&quot; {
-                $rem-values: append($rem-values, $value);
-            } @else {
-                $rem-values: append($rem-values, $value / $px-per-rem);
-            }
-        }
-        // Print the property and its list of converted values.
-        #{$property}: $rem-values;
-    }
- }" data-collapsed="@mixin px-to-rem($property, $px-values) { ... }"><code>@mixin px-to-rem($property, $px-values) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Given pixel inputs, print rem values with pixel fallbacks. Based on Bitmanic&#39;s rem mixin (<a href="https://github.com/bitmanic/rem">https://github.com/bitmanic/rem</a>)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$property</code></th><td data-label="desc"><p>The css property name</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$px-values</code></th><td data-label="desc"><p>The value or values (space-separated list) for $property, in pixels</p></td><td data-label="type"><code>String</code> or <code>List</code> or <code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-base-font-size"><code>base-font-size</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-set-font-size"><code>set-font-size</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-set-leading"><code>set-leading</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-leader"><code>leader</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-trailer"><code>trailer</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-side-rhythm-border"><code>side-rhythm-border</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-side-rhythm-border"><code>side-rhythm-border</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-borders"><code>rhythm-borders</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-borders"><code>rhythm-borders</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-paddings"><code>rhythm-paddings</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-paddings"><code>rhythm-paddings</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-paddings"><code>rhythm-paddings</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-paddings"><code>rhythm-paddings</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-establish-baseline"><h3 class="item__heading"><a class="item__name" href="#mixin-establish-baseline">establish-baseline</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin establish-baseline() { 
-    html {
-        $new-font-size: $base-font-size / $browser-default-font-size * 100%;    // eg. 16px ÷ 16px * 100%
-        // Only set the font size if it differs from the browser default
-        @if $new-font-size != 100% {
-            font-size: $new-font-size;
-        }
-        @include set-leading(1);
-    }
- }" data-collapsed="@mixin establish-baseline() { ... }"><code>@mixin establish-baseline() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Set type size and baseline grid on the root element.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-set-leading"><code>set-leading</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-base-font-size"><code>base-font-size</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#typography-variable-browser-default-font-size"><code>browser-default-font-size</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-set-font-size"><h3 class="item__heading"><a class="item__name" href="#mixin-set-font-size">set-font-size</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin set-font-size($to-size, $lines) { 
-    @include px-to-rem(font-size, $to-size);
-    @include set-leading($lines);
- }" data-collapsed="@mixin set-font-size($to-size, $lines) { ... }"><code>@mixin set-font-size($to-size, $lines) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Set the font size to the specified number of pixels while maintaining the vertical rhythm.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$to-size</code></th><td data-label="desc"><p>Desired font size, in pixels</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc"><p>Desired leading, expressed in baselines (can fractional)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-px-to-rem"><code>px-to-rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-set-leading"><code>set-leading</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-make-font-size"><code>make-font-size</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-make-font-size"><code>make-font-size</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-set-leading"><h3 class="item__heading"><a class="item__name" href="#mixin-set-leading">set-leading</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin set-leading($lines) { 
-    @include px-to-rem(line-height, $base-line-height * $lines);
- }" data-collapsed="@mixin set-leading($lines) { ... }"><code>@mixin set-leading($lines) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Adjust the leading to a new multiple of the baseline</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-px-to-rem"><code>px-to-rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-base-line-height"><code>base-line-height</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-establish-baseline"><code>establish-baseline</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-set-font-size"><code>set-font-size</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-leader"><h3 class="item__heading"><a class="item__name" href="#mixin-leader">leader</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin leader($lines, $property) { 
-    @include px-to-rem(#{$property}-top, rhythm($lines));
- }" data-collapsed="@mixin leader($lines, $property) { ... }"><code>@mixin leader($lines, $property) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Apply leading whitespace</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$property</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-px-to-rem"><code>px-to-rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#typography-function-rhythm"><code>rhythm</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-padding-leader"><code>padding-leader</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-spacing"><code>rhythm-spacing</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-trailer"><h3 class="item__heading"><a class="item__name" href="#mixin-trailer">trailer</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin trailer($lines, $property) { 
-    @include px-to-rem(#{$property}-bottom, rhythm($lines));
- }" data-collapsed="@mixin trailer($lines, $property) { ... }"><code>@mixin trailer($lines, $property) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Apply trailing whitespace</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$property</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-px-to-rem"><code>px-to-rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#typography-function-rhythm"><code>rhythm</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-padding-trailer"><code>padding-trailer</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-spacing"><code>rhythm-spacing</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-padding-leader"><h3 class="item__heading"><a class="item__name" href="#mixin-padding-leader">padding-leader</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin padding-leader($lines) { 
-    @include leader($lines, padding);
- }" data-collapsed="@mixin padding-leader($lines) { ... }"><code>@mixin padding-leader($lines) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Apply leading whitespace as padding</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-leader"><code>leader</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-spacing"><code>rhythm-spacing</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-padding-trailer"><h3 class="item__heading"><a class="item__name" href="#mixin-padding-trailer">padding-trailer</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin padding-trailer($lines) { 
-    @include trailer($lines, padding);
- }" data-collapsed="@mixin padding-trailer($lines) { ... }"><code>@mixin padding-trailer($lines) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Apply trailing whitespace as padding</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-trailer"><code>trailer</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-rhythm-spacing"><code>rhythm-spacing</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-rhythm-spacing"><h3 class="item__heading"><a class="item__name" href="#mixin-rhythm-spacing">rhythm-spacing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin rhythm-spacing($leader, $trailer, $padding-leader, $padding-trailer) { 
-    @include leader($leader);
-    @include trailer($trailer);
-    @include padding-leader($padding-leader);
-    @include padding-trailer($padding-trailer);
- }" data-collapsed="@mixin rhythm-spacing($leader, $trailer, $padding-leader, $padding-trailer) { ... }"><code>@mixin rhythm-spacing($leader, $trailer, $padding-leader, $padding-trailer) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Apply leading and trailing whitespace together. Defaults to equal margins above and below and no padding.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$leader</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$trailer</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$padding-leader</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$padding-trailer</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-leader"><code>leader</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-trailer"><code>trailer</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-padding-leader"><code>padding-leader</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-padding-trailer"><code>padding-trailer</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-side-rhythm-border"><h3 class="item__heading"><a class="item__name" href="#mixin-side-rhythm-border">side-rhythm-border</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin side-rhythm-border($side, $lines, $border:) { 
-    $width: nth($border, 1);
-    $style: nth($border, 2);
-    $color: nth($border, 3);
-    @include px-to-rem(border-#{$side}, $width $style $color);
+      
+        
+        
 
-    $padding: ($base-line-height - $width) * $lines;
-    @include px-to-rem(padding-#{$side}, $padding);
- }" data-collapsed="@mixin side-rhythm-border($side, $lines, $border:) { ... }"><code>@mixin side-rhythm-border($side, $lines, $border:) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Apply a border to one side of an element without throwing off the vertical rhythm. The available space ($lines) must be greater than the width of your border.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$side</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$border:</code></th><td data-label="desc"><p>$rule-width $rule-style $rule-color</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-px-to-rem"><code>px-to-rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-px-to-rem"><code>px-to-rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-base-line-height"><code>base-line-height</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-leading-border"><code>leading-border</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-trailing-border"><code>trailing-border</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-leading-border"><h3 class="item__heading"><a class="item__name" href="#mixin-leading-border">leading-border</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin leading-border($lines, $border:) { 
-    @include side-rhythm-border(top, $lines, $border);
- }" data-collapsed="@mixin leading-border($lines, $border:) { ... }"><code>@mixin leading-border($lines, $border:) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Apply a leading rhythm border</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$border:</code></th><td data-label="desc"><p>$rule-width $rule-style $rule-color</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-side-rhythm-border"><code>side-rhythm-border</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-trailing-border"><h3 class="item__heading"><a class="item__name" href="#mixin-trailing-border">trailing-border</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin trailing-border($lines, $border:) { 
-    @include side-rhythm-border(bottom, $lines, $border);
- }" data-collapsed="@mixin trailing-border($lines, $border:) { ... }"><code>@mixin trailing-border($lines, $border:) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Apply a trailing rhythm border</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$border:</code></th><td data-label="desc"><p>$rule-width $rule-style $rule-color</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-side-rhythm-border"><code>side-rhythm-border</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-rhythm-borders"><h3 class="item__heading"><a class="item__name" href="#mixin-rhythm-borders">rhythm-borders</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin rhythm-borders($lines, $border:) { 
-    $width: nth($border, 1);
-    $style: nth($border, 2);
-    $color: nth($border, 3);
-    @include px-to-rem(border, $width $style $color);
+      
+        
+        
 
-    $padding: ($base-line-height - $width) * $lines;
-    @include px-to-rem(padding, $padding);
- }" data-collapsed="@mixin rhythm-borders($lines, $border:) { ... }"><code>@mixin rhythm-borders($lines, $border:) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Apply borders equally to all sides with padding to maintain the vertical rhythm</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$border:</code></th><td data-label="desc"><p>$rule-width $rule-style $rule-color</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-px-to-rem"><code>px-to-rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-px-to-rem"><code>px-to-rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-base-line-height"><code>base-line-height</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-mixin-rhythm-paddings"><h3 class="item__heading"><a class="item__name" href="#mixin-rhythm-paddings">rhythm-paddings</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin rhythm-paddings($lines) { 
-    $padding-top: $base-line-height * $top;
-    $padding-right: $base-line-height * $right;
-    $padding-bottom: $base-line-height * $bottom;
-    $padding-left: $base-line-height * $left;
+      
+        
+        
 
-    @include px-to-rem(padding-top, $padding-top);
-    @include px-to-rem(padding-right, $padding-right);
-    @include px-to-rem(padding-bottom, $padding-bottom);
-    @include px-to-rem(padding-left, $padding-left);
- }" data-collapsed="@mixin rhythm-paddings($lines) { ... }"><code>@mixin rhythm-paddings($lines) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Apply padding equally to all sides and maintain the verticla rhythm.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-px-to-rem"><code>px-to-rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-px-to-rem"><code>px-to-rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-px-to-rem"><code>px-to-rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-px-to-rem"><code>px-to-rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-base-line-height"><code>base-line-height</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-base-line-height"><code>base-line-height</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-base-line-height"><code>base-line-height</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-base-line-height"><code>base-line-height</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section></section><section class="main__sub-section" id="typography-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="typography-function-rhythm"><h3 class="item__heading"><a class="item__name" href="#function-rhythm">rhythm</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function rhythm($lines) { 
-    $line-height: if($rhythm-font-unit != px, $rem-line-height, $base-line-height);
-    @return $line-height * $lines;
- }" data-collapsed="@function rhythm($lines) { ... }"><code>@function rhythm($lines) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Return the height of n baselines. Returns px or rem based on the value of $rhythm-font-unit.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$lines</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-rhythm-font-unit"><code>rhythm-font-unit</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#typography-variable-rem-line-height"><code>rem-line-height</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-base-line-height"><code>base-line-height</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-leader"><code>leader</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#typography-mixin-trailer"><code>trailer</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="typography-function-lines-for-font-size"><h3 class="item__heading"><a class="item__name" href="#function-lines-for-font-size">lines-for-font-size</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function lines-for-font-size($font-size) { 
-    $lines: if(
-        $round-to-nearest-half-line,
-        ceil(2 * $font-size / $base-line-height) / 2,
-        ceil($font-size / $base-line-height)
-    );
-    @if $lines * $base-line-height - $font-size &lt; $min-line-padding * 2 {
-        $lines: $lines + if($round-to-nearest-half-line, 0.5, 1);
-    }
-    @return $lines;
- }" data-collapsed="@function lines-for-font-size($font-size) { ... }"><code>@function lines-for-font-size($font-size) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Calculate the number of baselines required to accomodate a given pixel-based font size.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$font-size</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-round-to-nearest-half-line"><code>round-to-nearest-half-line</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-base-line-height"><code>base-line-height</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-base-line-height"><code>base-line-height</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-base-line-height"><code>base-line-height</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-min-line-padding"><code>min-line-padding</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#config-variable-round-to-nearest-half-line"><code>round-to-nearest-half-line</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="utilities"><div class="container">utilities</div></h1><section class="main__sub-section" id="utilities-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="utilities-mixin-clearfix"><h3 class="item__heading"><a class="item__name" href="#mixin-clearfix">clearfix</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin clearfix($extend: true) { 
-    @if $extend {
-        @extend %clearfix;
-    }
 
-    @else {
-        &amp;:after {
-            content: &quot;&quot;;
-            display: table;
-            clear: both;
-        }
-    }
- }" data-collapsed="@mixin clearfix($extend: true) { ... }"><code>@mixin clearfix($extend: true) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Float clearing helper.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$extend</code></th><td data-label="desc"><p>Whether or not extend a placeholder.</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>true</code></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[placeholder]</span> <a href="#utilities-placeholder-clearfix"><code>clearfix</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[placeholder]</span> <a href="#utilities-placeholder-clearfix"><code>clearfix</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Sassdoc</p></li></ul></section><section class="main__item container item" id="utilities-mixin-columns"><h3 class="item__heading"><a class="item__name" href="#mixin-columns">columns</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin columns($count, $gap) { 
-    -moz-column-count: $count;
-    -moz-column-gap: $gap;
-    -webkit-column-count: $count;
-    -webkit-column-gap: $gap;
-    column-count: $count;
-    column-gap: $gap;
- }" data-collapsed="@mixin columns($count, $gap) { ... }"><code>@mixin columns($count, $gap) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Shurtcut mixin for columns which cover all major browsers.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$count</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$gap</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="utilities-mixin-ellipsis"><h3 class="item__heading"><a class="item__name" href="#mixin-ellipsis">ellipsis</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin ellipsis($extend: true) { 
-    @if $extend {
-        @extend %ellipsis;
-    }
 
-    @else {
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-    }
- }" data-collapsed="@mixin ellipsis($extend: true) { ... }"><code>@mixin ellipsis($extend: true) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Accessibility ellipsis helper.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$extend</code></th><td data-label="desc"><p>Whether or not extend a placeholder.</p></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>true</code></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[placeholder]</span> <a href="#utilities-placeholder-ellipsis"><code>ellipsis</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[placeholder]</span> <a href="#utilities-placeholder-ellipsis"><code>ellipsis</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Sassdoc</p></li></ul></section><section class="main__item container item" id="utilities-mixin-placeholder-color"><h3 class="item__heading"><a class="item__name" href="#mixin-placeholder-color">placeholder-color</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin placeholder-color($color, $opacity: 1) { 
-    // Webkit, Blink, Edge
-    &amp;::-webkit-input-placeholder {
-        color: $color;
-        opacity: $opacity;
-    }
-    // Mozila Firefox 4 to 18
-    &amp;:-moz-placeholder {
-        color: $color;
-        opacity: $opacity;
-    }
-    // Mozilla Firefox 19+
-    &amp;::-moz-placeholder {
-        color: $color;
-        opacity: $opacity;
-    }
-    // Internet Explorer 10-11
-    &amp;:-ms-input-placeholder {
-        color: $color;
-        opacity: $opacity;
-    }
- }" data-collapsed="@mixin placeholder-color($color, $opacity: 1) { ... }"><code>@mixin placeholder-color($color, $opacity: 1) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Change placeholder colour in form fields like inputs, textareas etc.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$opacity</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>1</code></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="utilities-mixin-position"><h3 class="item__heading"><a class="item__name" href="#mixin-position">position</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) { 
-    position: $position;
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
- }" data-collapsed="@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) { ... }"><code>@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Shorthand for positioning.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$position</code></th><td data-label="desc"><p>Position type (either <code>absolute</code>, <code>fixed</code> or <code>relative</code>)</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$top</code></th><td data-label="desc"><p>Top offset</p></td><td data-label="type"><code>Length</code></td><td data-label="default"><code>null</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$right</code></th><td data-label="desc"><p>Right offset</p></td><td data-label="type"><code>Length</code></td><td data-label="default"><code>null</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$bottom</code></th><td data-label="desc"><p>Bottom offset</p></td><td data-label="type"><code>Length</code></td><td data-label="default"><code>null</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$left</code></th><td data-label="desc"><p>Left offset</p></td><td data-label="type"><code>Length</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Sassdoc</p></li></ul></section><section class="main__item container item" id="utilities-mixin-rotate"><h3 class="item__heading"><a class="item__name" href="#mixin-rotate">rotate</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin rotate($degree) { 
-    -moz-transform: rotate($degree);
-    -o-transform: rotate($degree);
-    -webkit-transform: rotate($degree);
-    transform: rotate($degree);
- }" data-collapsed="@mixin rotate($degree) { ... }"><code>@mixin rotate($degree) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Rotate element.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$degree</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="utilities-mixin-transitions"><h3 class="item__heading"><a class="item__name" href="#mixin-transitions">transitions</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin transitions($transitions...) { 
-    -webkit-transition: $transitions;
-    -moz-transition: $transitions;
-    -ms-transition: $transitions;
-    -o-transition: $transitions;
-    transition: $transitions;
- }" data-collapsed="@mixin transitions($transitions...) { ... }"><code>@mixin transitions($transitions...) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Transition mixin which cover all major browsers.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$transitions</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Arglist</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="utilities-mixin-gradient"><h3 class="item__heading"><a class="item__name" href="#mixin-gradient">gradient</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin gradient($direction, $color-01, $color-02) { 
-    background: $color-01;
-    background: -webkit-linear-gradient($direction, $color-01, $color-02);
-    background: -o-linear-gradient($direction, $color-01, $color-02);
-    background: -moz-linear-gradient($direction, $color-01, $color-02);
-    background: linear-gradient($direction, $color-01, $color-02);
- }" data-collapsed="@mixin gradient($direction, $color-01, $color-02) { ... }"><code>@mixin gradient($direction, $color-01, $color-02) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Shortcut mixin for web gradients which cover all major browsers.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$direction</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code> or <code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color-01</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color-02</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="utilities-mixin-grid"><h3 class="item__heading"><a class="item__name" href="#mixin-grid">grid</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid($columns, $rows: $columns, $column-gap: 0px, $row-gap: $column-gap) { 
-    // display: -ms-grid;
-    display: grid;
-    // -ms-grid-columns: $columns;
-    grid-template-columns: $columns;
-    // -ms-grid-rows: $rows;
-    grid-template-rows: $rows;
-    grid-column-gap: $column-gap;
-    grid-row-gap: $row-gap;
- }" data-collapsed="@mixin grid($columns, $rows: $columns, $column-gap: 0px, $row-gap: $column-gap) { ... }"><code>@mixin grid($columns, $rows: $columns, $column-gap: 0px, $row-gap: $column-gap) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Utility mixin for css grids.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$columns</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$rows</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default"><code>$columns</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$column-gap</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0px</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$row-gap</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$column-gap</code></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="utilities-mixin-grid-column"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-column">grid-column</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-column($start, $end) { 
-    // -ms-grid-column: $start;
-    grid-column-start: $start;
-    // -ms-grid-column-span: $end - $start;
-    grid-column-end: $end;
- }" data-collapsed="@mixin grid-column($start, $end) { ... }"><code>@mixin grid-column($start, $end) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Shortcut mixin for setting element position inside a grid.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$start</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$end</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section><section class="main__item container item" id="utilities-mixin-grid-row"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-row">grid-row</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-row($start, $end) { 
-    // -ms-grid-row: $start;
-    grid-row-start: $start;
-    // -ms-grid-row-span: $end - $start;
-    grid-row-end: $end;
- }" data-collapsed="@mixin grid-row($start, $end) { ... }"><code>@mixin grid-row($start, $end) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Shortcut mixin for setting element position inside a grid.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$start</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$end</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Martin Rocek</p></li></ul></section></section><section class="main__sub-section" id="utilities-placeholder"><h2 class="main__heading--secondary"><div class="container">placeholders</div></h2><section class="main__item container item" id="utilities-placeholder-clearfix"><h3 class="item__heading"><a class="item__name" href="#placeholder-clearfix">clearfix</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="%clearfix { 
-    @include clearfix($extend: false);
- }" data-collapsed="%clearfix { ... }"><code>%clearfix { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Clearfix helper</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-clearfix"><code>clearfix</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-clearfix"><code>clearfix</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Sassdoc</p></li></ul></section><section class="main__item container item" id="utilities-placeholder-ellipsis"><h3 class="item__heading"><a class="item__name" href="#placeholder-ellipsis">ellipsis</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="%ellipsis { 
-    @include ellipsis($extend: false);
- }" data-collapsed="%ellipsis { ... }"><code>%ellipsis { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Accessibility ellipsis helper.</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-ellipsis"><code>ellipsis</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#utilities-mixin-ellipsis"><code>ellipsis</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Sassdoc</p></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <a class="project-info__name" href="https://github.com/silencesys/silent-sass#readme">Silent-sass</a><!-- Version --> <span class="project-info__version">- v0.0.9</span><!-- License --> <span class="project-info__license">, under MIT</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="make-font-size" data-name="make-font-size" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#make-font-size">
+      make-font-size
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin make-font-size($fs-font-size) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Utility function for mixin font-size.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$fs-font-size</code>
+      <ul class="meta">
+        <span class="type-label">string, list</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="px-to-rem" data-name="px-to-rem" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#px-to-rem">
+      px-to-rem
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin px-to-rem($property, $px-values) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Given pixel inputs, print rem values with pixel fallbacks.
+Based on Bitmanic&#39;s rem mixin (<a href="https://github.com/bitmanic/rem">https://github.com/bitmanic/rem</a>)</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$property</code>
+      <ul class="meta">
+        <span class="type-label">String</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>The css property name</p>
+
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$px-values</code>
+      <ul class="meta">
+        <span class="type-label">String, List, Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>The value or values (space-separated list) for $property, in pixels</p>
+
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="establish-baseline" data-name="establish-baseline" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#establish-baseline">
+      establish-baseline
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+    <pre class="code language-scss"><code>@mixin establish-baseline() { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Set type size and baseline grid on the root element.</p>
+</p>
+
+
+      
+        
+        
+    <p>This mixin takes no parameters.</p>
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="set-font-size" data-name="set-font-size" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#set-font-size">
+      set-font-size
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin set-font-size($to-size, $lines) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Set the font size to the specified number of pixels while
+maintaining the vertical rhythm.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$to-size</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>Desired font size, in pixels</p>
+
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$lines</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>Desired leading, expressed in baselines (can fractional)</p>
+
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="set-leading" data-name="set-leading" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#set-leading">
+      set-leading
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin set-leading($lines) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Adjust the leading to a new multiple of the baseline</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$lines</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="leader" data-name="leader" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#leader">
+      leader
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin leader($lines, $property) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Apply leading whitespace</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$lines</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$property</code>
+      <ul class="meta">
+        <span class="type-label">String</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="trailer" data-name="trailer" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#trailer">
+      trailer
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin trailer($lines, $property) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Apply trailing whitespace</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$lines</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$property</code>
+      <ul class="meta">
+        <span class="type-label">String</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="padding-leader" data-name="padding-leader" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#padding-leader">
+      padding-leader
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin padding-leader($lines) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Apply leading whitespace as padding</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$lines</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="padding-trailer" data-name="padding-trailer" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#padding-trailer">
+      padding-trailer
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin padding-trailer($lines) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Apply trailing whitespace as padding</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$lines</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="rhythm-spacing" data-name="rhythm-spacing" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#rhythm-spacing">
+      rhythm-spacing
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin rhythm-spacing($leader, $trailer, $padding-leader, $padding-trailer) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Apply leading and trailing whitespace together.
+Defaults to equal margins above and below and no padding.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$leader</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$trailer</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$padding-leader</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$padding-trailer</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="side-rhythm-border" data-name="side-rhythm-border" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#side-rhythm-border">
+      side-rhythm-border
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin side-rhythm-border($side, $lines, $border:) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Apply a border to one side of an element without throwing off
+the vertical rhythm. The available space ($lines) must be
+greater than the width of your border.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$side</code>
+      <ul class="meta">
+        <span class="type-label">String</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$lines</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$border:</code>
+      <ul class="meta">
+        <span class="type-label">List</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>$rule-width $rule-style $rule-color</p>
+
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="leading-border" data-name="leading-border" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#leading-border">
+      leading-border
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin leading-border($lines, $border:) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Apply a leading rhythm border</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$lines</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$border:</code>
+      <ul class="meta">
+        <span class="type-label">List</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>$rule-width $rule-style $rule-color</p>
+
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="trailing-border" data-name="trailing-border" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#trailing-border">
+      trailing-border
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin trailing-border($lines, $border:) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Apply a trailing rhythm border</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$lines</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$border:</code>
+      <ul class="meta">
+        <span class="type-label">List</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>$rule-width $rule-style $rule-color</p>
+
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="rhythm-borders" data-name="rhythm-borders" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#rhythm-borders">
+      rhythm-borders
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin rhythm-borders($lines, $border:) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Apply borders equally to all sides with padding to maintain the vertical rhythm</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$lines</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$border:</code>
+      <ul class="meta">
+        <span class="type-label">List</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>$rule-width $rule-style $rule-color</p>
+
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="rhythm-paddings" data-name="rhythm-paddings" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#rhythm-paddings">
+      rhythm-paddings
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin rhythm-paddings($lines) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Apply padding equally to all sides and maintain the verticla rhythm.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$lines</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+</section>
+
+        
+      
+        
+      
+      
+        
+      
+        
+      
+        
+          <h1 id="function" class="type-title">
+  <span data-role="content-wrapper">
+    functions
+  </span>
+</h1>
+
+<section class="functions">
+  
+    
+
+<article id="rhythm" data-name="rhythm" data-type="function" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#rhythm">
+      rhythm
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@function rhythm($lines) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Return the height of n baselines.
+Returns px or rem based on the value of $rhythm-font-unit.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$lines</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="lines-for-font-size" data-name="lines-for-font-size" data-type="function" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#lines-for-font-size">
+      lines-for-font-size
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@function lines-for-font-size($font-size) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Calculate the number of baselines required to accomodate a
+given pixel-based font size.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$font-size</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+</section>
+
+        
+      
+      
+        
+          <h1 id="variable" class="type-title">
+  <span data-role="content-wrapper">
+    variables
+  </span>
+</h1>
+
+<section class="variables">
+  
+    
+
+<article id="browser-default-font-size" data-name="browser-default-font-size" data-type="variable" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#browser-default-font-size">
+      browser-default-font-size
+    </a>
+  </h2>
+
+  
+    <span class="type-label">Number</span>
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    <pre class="code language-scss"><code>$browser-default-font-size: 16px;</code></pre>
+
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Most (all?) browsers use a default of 16px for type.</p>
+</p>
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="rem-line-height" data-name="rem-line-height" data-type="variable" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#rem-line-height">
+      rem-line-height
+    </a>
+  </h2>
+
+  
+    <span class="type-label">Number</span>
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    <pre class="code language-scss"><code>$rem-line-height: $base-line-height / $base-font-size * 1rem;</code></pre>
+
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>The height of one line of type, in rems.</p>
+</p>
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+</section>
+
+        
+      
+        
+      
+        
+      
+    
+      
+        
+          <h1 id="mixin" class="type-title">
+  <span data-role="content-wrapper">
+    mixins
+  </span>
+</h1>
+
+<section class="mixins">
+  
+    
+
+<article id="clearfix" data-name="clearfix" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#clearfix">
+      clearfix
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+        
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin clearfix($extend: true) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Float clearing helper.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$extend</code>
+      <ul class="meta">
+        <span class="type-label">bool</span>
+        
+          <span class="default-label">
+            Default:<code>true</code>
+          </span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>Whether or not extend a placeholder.</p>
+
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="columns" data-name="columns" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#columns">
+      columns
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin columns($count, $gap) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Shurtcut mixin for columns which cover all major browsers.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$count</code>
+      <ul class="meta">
+        <span class="type-label">number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$gap</code>
+      <ul class="meta">
+        <span class="type-label">number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="ellipsis" data-name="ellipsis" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#ellipsis">
+      ellipsis
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+        
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin ellipsis($extend: true) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Accessibility ellipsis helper.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$extend</code>
+      <ul class="meta">
+        <span class="type-label">bool</span>
+        
+          <span class="default-label">
+            Default:<code>true</code>
+          </span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>Whether or not extend a placeholder.</p>
+
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="placeholder-color" data-name="placeholder-color" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#placeholder-color">
+      placeholder-color
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+        
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin placeholder-color($color, $opacity: 1) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Change placeholder colour in form fields like inputs, textareas etc.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$color</code>
+      <ul class="meta">
+        <span class="type-label">color</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$opacity</code>
+      <ul class="meta">
+        <span class="type-label">number</span>
+        
+          <span class="default-label">
+            Default:<code>1</code>
+          </span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="position" data-name="position" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#position">
+      position
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+        
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+        
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+        
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+        
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Shorthand for positioning.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$position</code>
+      <ul class="meta">
+        <span class="type-label">string</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>Position type (either <code>absolute</code>, <code>fixed</code> or <code>relative</code>)</p>
+
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$top</code>
+      <ul class="meta">
+        <span class="type-label">length</span>
+        
+          <span class="default-label">
+            Default:<code>null</code>
+          </span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>Top offset</p>
+
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$right</code>
+      <ul class="meta">
+        <span class="type-label">length</span>
+        
+          <span class="default-label">
+            Default:<code>null</code>
+          </span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>Right offset</p>
+
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$bottom</code>
+      <ul class="meta">
+        <span class="type-label">length</span>
+        
+          <span class="default-label">
+            Default:<code>null</code>
+          </span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>Bottom offset</p>
+
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$left</code>
+      <ul class="meta">
+        <span class="type-label">length</span>
+        
+          <span class="default-label">
+            Default:<code>null</code>
+          </span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>Left offset</p>
+
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="rotate" data-name="rotate" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#rotate">
+      rotate
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin rotate($degree) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Rotate element.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$degree</code>
+      <ul class="meta">
+        <span class="type-label">number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="transitions" data-name="transitions" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#transitions">
+      transitions
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+        
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin transitions($transitions...) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Transition mixin which cover all major browsers.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$transitions</code>
+      <ul class="meta">
+        <span class="type-label">arglist</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="gradient" data-name="gradient" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#gradient">
+      gradient
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin gradient($direction, $color-01, $color-02) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Shortcut mixin for web gradients which cover all major browsers.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$direction</code>
+      <ul class="meta">
+        <span class="type-label">Number, String</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$color-01</code>
+      <ul class="meta">
+        <span class="type-label">String</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$color-02</code>
+      <ul class="meta">
+        <span class="type-label">String</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="grid" data-name="grid" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#grid">
+      grid
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+        
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+        
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+        
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin grid($columns, $rows: $columns, $column-gap: 0px, $row-gap: $column-gap) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Utility mixin for css grids.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$columns</code>
+      <ul class="meta">
+        <span class="type-label">String</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$rows</code>
+      <ul class="meta">
+        <span class="type-label">String</span>
+        
+          <span class="default-label">
+            Default:<code>$columns</code>
+          </span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$column-gap</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="default-label">
+            Default:<code>0px</code>
+          </span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$row-gap</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="default-label">
+            Default:<code>$column-gap</code>
+          </span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="grid-column" data-name="grid-column" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#grid-column">
+      grid-column
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin grid-column($start, $end) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Shortcut mixin for setting element position inside a grid.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$start</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$end</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="grid-row" data-name="grid-row" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#grid-row">
+      grid-row
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+      
+
+      
+
+      
+
+      
+        
+      
+    
+    <pre class="code language-scss"><code>@mixin grid-row($start, $end) { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Shortcut mixin for setting element position inside a grid.</p>
+</p>
+
+
+      
+        
+        
+  <h3 class="sub-heading">Parameters</h3>
+  <dl class="parameters">
+  
+    <dt class="parameter">
+      <code class="name">$start</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+    <dt class="parameter">
+      <code class="name">$end</code>
+      <ul class="meta">
+        <span class="type-label">Number</span>
+        
+          <span class="required-label">Required</span>
+        
+      </ul>
+    </dt>
+    <dd class="parameter-definition">
+      <div class="description">
+        <p>No description available.</p>
+      </div>
+    </dd>
+  
+  </dl>
+  
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+</section>
+
+        
+      
+        
+      
+      
+        
+      
+        
+      
+      
+        
+      
+        
+      
+    
+    <footer class="footer">
+      <div data-role="content-wrapper" id="footer">
+  <a href=""><img class="footer-logo" src=""/></a>
+
+  <p>Silent.sass is maintained by <a href="https://blog.silencesys.com/en">Silence.sys</a></p>
+  <p>Documentation generated using <a href="http://sassdoc.com/">SassDoc</a>.</p>
+</div>
+
+    </footer>
+  </section>
+
+    </div>
+<script src="assets/vendor/waypoints.min.js"></script>
+<script src="assets/vendor/fuse.min.js"></script>
+<script src="assets/vendor/ticker.js"></script>
+<script src="assets/vendor/highlight.js"></script>
+<script src="assets/js/main.js"></script>
+
+  </body>
+</html>

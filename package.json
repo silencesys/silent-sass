@@ -23,7 +23,9 @@
     "modularscale-sass": "^3.0.5",
     "normalize.css": "^7.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "sassdoc-theme-neat": "0.0.2"
+  },
   "bugs": {
     "url": "https://github.com/silencesys/silent-sass/issues"
   },
