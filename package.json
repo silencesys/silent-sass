@@ -20,11 +20,13 @@
   "license": "MIT",
   "dependencies": {
     "modular-scale": "^4.4.1",
-    "modularscale-sass": "^3.0.5",
     "normalize.css": "^8.0.0"
   },
   "bugs": {
     "url": "https://github.com/silencesys/silent-sass/issues"
   },
-  "homepage": "https://github.com/silencesys/silent-sass#readme"
+  "homepage": "https://github.com/silencesys/silent-sass#readme",
+  "devDependencies": {
+    "modularscale-sass": "^3.0.10"
+  }
 }

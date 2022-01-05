@@ -44,7 +44,7 @@ $browser-default-font-size: 16px;
 /// The height of one line of type, in rems.
 ///
 /// @type Number
-$rem-line-height: $base-line-height / $base-font-size * 1rem;
+$rem-line-height: calc($base-line-height / $base-font-size) * 1rem;
 
 /// Font-size mixin that calculates accurate font-size and line-height
 /// to available breakpoints.
@@ -107,14 +107,14 @@ $rem-line-height: $base-line-height / $base-font-size * 1rem;
 @mixin px-to-rem($property, $px-values) {
     // Number of pixels in 1rem (default: 16px/rem)
     // When converting to rems, we must divide by this ratio.
-    $px-per-rem: $base-font-size / 1rem;
+    $px-per-rem: calc($base-font-size / 1rem);
 
     // Print the pixel fallback declaration first so we can override it in capable browsers.
     #{$property}: $px-values;
 
     // If there is only one value, print the declaration with the value converted to rems.
     @if type-of($px-values) == "number" {
-        #{$property}: $px-values / $px-per-rem;
+        #{$property}: calc($px-values / $px-per-rem);
     } @else {
         // Otherwise, we've got a list and we'll need to convert each value in turn.
         // Create an empty list that we can dump values into.
@@ -124,7 +124,7 @@ $rem-line-height: $base-line-height / $base-font-size * 1rem;
             @if $value == 0 or type-of($value) == "string" or type-of($value) == "color" {
                 $rem-values: append($rem-values, $value);
             } @else {
-                $rem-values: append($rem-values, $value / $px-per-rem);
+                $rem-values: append($rem-values, calc($value / $px-per-rem));
             }
         }
         // Print the property and its list of converted values.
@@ -148,8 +148,8 @@ $rem-line-height: $base-line-height / $base-font-size * 1rem;
 @function lines-for-font-size($font-size) {
     $lines: if(
         $round-to-nearest-half-line,
-        ceil(2 * $font-size / $base-line-height) / 2,
-        ceil($font-size / $base-line-height)
+        ceil(calc(2 * $font-size / $base-line-height)) / 2,
+        ceil(calc($font-size / $base-line-height))
     );
     @if $lines * $base-line-height - $font-size < $min-line-padding * 2 {
         $lines: $lines + if($round-to-nearest-half-line, 0.5, 1);
@@ -161,7 +161,7 @@ $rem-line-height: $base-line-height / $base-font-size * 1rem;
 /// Set type size and baseline grid on the root element.
 @mixin establish-baseline {
     html {
-        $new-font-size: $base-font-size / $browser-default-font-size * 100%;    // eg. 16px ÷ 16px * 100%
+        $new-font-size: calc($base-font-size / $browser-default-font-size) * 100%;    // eg. 16px ÷ 16px * 100%
         // Only set the font size if it differs from the browser default
         @if $new-font-size != 100% {
             font-size: $new-font-size;
